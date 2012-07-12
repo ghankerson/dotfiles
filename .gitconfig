@@ -1,0 +1,26 @@
+[user]
+	name = Geoff Hankerson
+	email = ghankerson@phase2technology.com
+[ui]
+        color = auto
+[core]
+        autocrlf = input
+[color]
+        ui = auto
+[alias]
+        swr = log --stat -M
+        pl = log --pretty=oneline --abbrev-commit --all --graph --decorate
+        s = status
+        a = add
+        df = diff
+        c = commit
+        co = checkout
+[mergetool "diffmerge"]
+        cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+        trustExitCode = true
+[merge]
+        tool = diffmerge
+[diff]
+        tool = diffmerge
+[difftool "diffmerge"]
+        cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
